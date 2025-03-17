@@ -55,12 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', (e) => {
             e.preventDefault();
             const section = document.querySelector(anchor.getAttribute('href'));
-            section.scrollIntoView({ behavior: 'smooth' });
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
+    // Smooth scroll for resume button (external link)
+    resumeButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open(resumeButton.getAttribute('href'), '_blank');
+    });
+
     // Scroll Animation for Sections
-    const items = document.querySelectorAll('.experience-item, .education-item, .internship-item, .project-card, .skills-list span');
+    const items = document.querySelectorAll('.experience-item, .education-item, .project-card, .skills-list span');
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -112,6 +120,27 @@ document.addEventListener('DOMContentLoaded', () => {
             top: 0,
             behavior: 'smooth', // Smooth scroll to top
         });
+    });
+
+    // Scroll-aware Header
+    let lastScrollTop = 0;
+    let isHeaderVisible = true; // Track header visibility state
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+        let currentScrollTop = window.scrollY;
+
+        if (currentScrollTop > lastScrollTop && isHeaderVisible) {
+            // Scrolling down and header is visible
+            header.classList.add('hidden');
+            isHeaderVisible = false;
+        } else if (currentScrollTop < lastScrollTop && !isHeaderVisible) {
+            // Scrolling up and header is hidden
+            header.classList.remove('hidden');
+            isHeaderVisible = true;
+        }
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative scroll values
     });
 
     // Resume modal

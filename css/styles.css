@@ -36,9 +36,10 @@ body.dark-mode span {
     color: #ffffff;
 }
 
+
 /* Header */
 header {
-    position: sticky;
+    position: flex;
     top: 0;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(12px);
@@ -893,6 +894,16 @@ body.dark-mode .back-to-top:hover {
     50% {
         opacity: 0;
     }
+}
+
+/* Scroll-aware Header */
+header {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
 }
 
 /* Responsive Design */
