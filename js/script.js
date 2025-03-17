@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingText = document.querySelector('.typing-text');
     const cursor = document.querySelector('.cursor');
 
+
     // Typing Effect
     const text = "Hi, I’m Kishore A";
     let index = 0;
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll Animation for Sections
-    const items = document.querySelectorAll('.experience-item, .education-item, .project-card, .skills-list span');
+    const items = document.querySelectorAll('.experience-item, .education-item, .project-card, .skills-list span, .certification-card');
 
     const observer = new IntersectionObserver(
         (entries) => {

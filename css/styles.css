@@ -39,7 +39,6 @@ body.dark-mode span {
 /* Header */
 header {
     position: sticky;
-    /* Fixed the incorrect 'flex' value */
     top: 0;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(12px);
@@ -60,8 +59,7 @@ body.dark-mode header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    /* Added for better spacing */
+    gap: 3px;
 }
 
 .logo {
@@ -103,9 +101,7 @@ nav {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-    /* Added to prevent overflow in smaller screens */
     justify-content: center;
-    /* Center navigation links */
 }
 
 nav a {
@@ -215,7 +211,6 @@ body.dark-mode .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center content */
 }
 
 .hero-avatar {
@@ -360,6 +355,8 @@ h2::after {
     background: #0070d2;
     position: absolute;
     bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 3px;
     box-shadow: 0 3px 8px rgba(0, 112, 210, 0.3);
 }
@@ -583,6 +580,62 @@ body.dark-mode .experience-item p {
     color: #a0aec0;
 }
 
+/* Certifications */
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.certification-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.08), -8px -8px 20px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid #e0e5e8;
+}
+
+body.dark-mode .certification-card {
+    background: #000000;
+    box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.05), -8px -8px 20px rgba(0, 0, 0, 0.5);
+    border-color: #4d4f5c;
+}
+
+.certification-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 12px 12px 25px rgba(0, 112, 210, 0.2), -12px -12px 25px rgba(255, 255, 255, 0.6);
+}
+
+body.dark-mode .certification-card:hover {
+    box-shadow: 12px 12px 25px rgba(0, 161, 224, 0.2), -12px -12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.certification-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a2530;
+}
+
+body.dark-mode .certification-card h3 {
+    color: #ffffff;
+}
+
+.certification-card p {
+    font-size: 16px;
+    color: #4d4f5c;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+body.dark-mode .certification-card p {
+    color: #a0aec0;
+}
+
 /* Contact Form */
 .contact-form {
     display: flex;
@@ -738,13 +791,12 @@ body.dark-mode footer {
 }
 
 .enhanced-avatar {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     border: 6px solid #0070d2;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     object-fit: cover;
-    /* Fixed 'center' to 'cover' */
     animation: fadeIn 0.5s ease;
     transition: transform 0.3s ease;
 }
@@ -774,10 +826,8 @@ body.dark-mode footer {
 .resume-preview {
     width: 100%;
     max-width: 90%;
-    /* Added max-width for better scaling */
     height: 100%;
     max-height: 90vh;
-    /* Added max-height for better scaling */
     border-radius: 15px;
     border: 5px solid #0070d2;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -803,12 +853,10 @@ body.dark-mode footer {
 /* Name Highlight for Typing Effect */
 .name-highlight {
     color: #0d589a;
-    /* Salesforce blue for light mode */
 }
 
 body.dark-mode .name-highlight {
     color: #00a1e0;
-    /* Light Salesforce blue for dark mode */
 }
 
 /* Back to Top Button */
@@ -817,7 +865,6 @@ body.dark-mode .name-highlight {
     bottom: 30px;
     right: 30px;
     background: #0070d2;
-    /* Salesforce blue */
     color: #ffffff;
     border: none;
     border-radius: 50%;
@@ -842,19 +889,16 @@ body.dark-mode .name-highlight {
 
 .back-to-top:hover {
     background: #005fb2;
-    /* Slightly darker Salesforce blue on hover */
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 112, 210, 0.4);
 }
 
 body.dark-mode .back-to-top {
     background: #00a1e0;
-    /* Light Salesforce blue for dark mode */
 }
 
 body.dark-mode .back-to-top:hover {
     background: #008bbf;
-    /* Slightly darker light Salesforce blue on hover */
 }
 
 /* Animations */
@@ -914,18 +958,14 @@ header.hidden {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
-    /* Header Adjustments */
     header {
         padding: 15px 20px;
-        /* Reduced padding for mobile */
     }
 
     .header-content {
         flex-direction: column;
         gap: 15px;
         align-items: center;
-        /* Center align the header content */
     }
 
     .logo {
@@ -943,7 +983,6 @@ header.hidden {
 
     nav a {
         width: 80%;
-        /* Reduced width for better fit */
         text-align: center;
         padding: 10px;
         font-size: 16px;
@@ -953,7 +992,6 @@ header.hidden {
         margin-top: 10px;
     }
 
-    /* Hero Adjustments */
     .hero {
         padding: 80px 15px 60px;
     }
@@ -974,7 +1012,6 @@ header.hidden {
     .hero p {
         font-size: 20px;
         flex-wrap: wrap;
-        /* Allow wrapping for long text */
         text-align: center;
     }
 
@@ -983,13 +1020,18 @@ header.hidden {
         font-size: 16px;
     }
 
-    /* Sections */
     .section-content {
         padding: 60px 15px;
     }
 
     h2 {
         font-size: 32px;
+        gap: 10px;
+    }
+
+    h2::after {
+        width: 50px;
+        bottom: -10px;
     }
 
     .form-group {
@@ -1042,8 +1084,6 @@ header.hidden {
 }
 
 @media (max-width: 480px) {
-
-    /* Header Adjustments */
     header {
         padding: 10px 15px;
     }
@@ -1067,7 +1107,6 @@ header.hidden {
         width: 90%;
     }
 
-    /* Hero Adjustments */
     .hero {
         padding: 60px 10px 40px;
     }
@@ -1090,13 +1129,18 @@ header.hidden {
         font-size: 14px;
     }
 
-    /* Sections */
     .section-content {
         padding: 40px 10px;
     }
 
     h2 {
         font-size: 28px;
+        gap: 8px;
+    }
+
+    h2::after {
+        width: 40px;
+        bottom: -8px;
     }
 
     .project-card {
@@ -1128,8 +1172,6 @@ header.hidden {
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
-
-    /* Header Adjustments */
     .header-content {
         padding: 0 20px;
     }
@@ -1143,7 +1185,6 @@ header.hidden {
         padding: 10px 15px;
     }
 
-    /* Hero Adjustments */
     .hero-content {
         max-width: 800px;
     }
@@ -1161,13 +1202,18 @@ header.hidden {
         font-size: 17px;
     }
 
-    /* Sections */
     .section-content {
         padding: 80px 20px;
     }
 
     h2 {
         font-size: 38px;
+        gap: 12px;
+    }
+
+    h2::after {
+        width: 55px;
+        bottom: -12px;
     }
 
     .project-grid {
