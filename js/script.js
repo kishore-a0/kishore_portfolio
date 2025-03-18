@@ -123,6 +123,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Certificate Modal
+    const certificateButton = document.getElementById('Certificate_button');
+    const certificateModal = document.getElementById('certificateModal');
+    const certificatePreview = document.getElementById('certificatePreview');
+    const closeCertificateModal = document.getElementById('closeCertificateModal');
+
+    certificateButton.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        certificatePreview.setAttribute('src', 'assets/certificates/certificate.pdf');
+        certificateModal.classList.add('active');
+    });
+
+    closeCertificateModal.addEventListener('click', () => {
+        certificateModal.classList.remove('active');
+        certificatePreview.setAttribute('src', ''); // Clear the src to stop loading
+    });
+
+    certificateModal.addEventListener('click', (e) => {
+        if (e.target === certificateModal) {
+            certificateModal.classList.remove('active');
+            certificatePreview.setAttribute('src', ''); // Clear the src to stop loading
+        }
+    });
+
     // Scroll-aware Header
     let lastScrollTop = 0;
     let isHeaderVisible = true; // Track header visibility state
