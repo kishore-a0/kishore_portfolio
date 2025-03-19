@@ -1,214 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kishore A | Software Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.4.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/11.4.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/11.4.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <img src="assets/images/Kishore.jpg" alt="Kishore" class="avatar" id="avatar">
-                <span>Kishore A</span>
-            </div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <button class="mode-toggle" aria-label="Toggle Theme">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>
-                <span class="typing-text"></span>
-                <span class="cursor">|</span>
-            </h1>
-            <p><i class="fas fa-laptop-code"></i> A Software Developer Building Innovative Solutions</p>
-            <a href="assets/resume/Kishore_Resume.pdf" class="cta-button" id="resumeButton">View My Resume</a>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main>
-        <section id="about">
-            <div class="section-content">
-                <h2><i class="fas fa-user"></i> About Me</h2>
-                <p>MCA student skilled in Python, SQL, HTML, CSS, and JavaScript. Developed a Face Recognition
-                    Attendance System and a Student Fees Management System during an internship at QueenBug
-                    Technologies. Fast learner with a focus on problem solving</p>
-            </div>
-            <div class="section-divider"></div>
-        </section>
-
-        <section id="projects">
-            <div class="section-content">
-                <h2><i class="fas fa-code"></i> Projects</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <img src="assets/images/faces.jpeg" alt="Project 1">
-                        <h3>Face Recognition Attendance System</h3>
-                        <p>Built a real-time detection system using Python, OpenCV, and SQL for attendance tracking</p>
-                        <a href="#" class="project-link">Learn More</a>
-                    </div>
-                    <div class="project-card">
-                        <img src="assets/images/fees.png" alt="Project 2">
-                        <h3>Student Fees Management System</h3>
-                        <p>Developed a PHP-based fees management system with MySQL for automated fees processing</p>
-                        <a href="#" class="project-link">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="section-divider"></div>
-        </section>
-
-        <section id="experience">
-            <div class="section-content">
-                <h2><i class="fas fa-suitcase"></i> Experience</h2>
-                <div class="experience-list">
-                    <div class="experience-item">
-                        <h3>Internship</h3>
-                        <p><i class="fas fa-building"></i>QueenBug Technologies,Tirupattur</a></p>
-                        <p><i class="fas fa-calendar"></i> June 2024 - Feb 2025</p>
-                        <p> • Developed a Face Recognition Attendance System using Python, OpenCV, and SQL, enabling
-                            real-time data analytics</p>
-                        <p> • Integrated secure data storage with MySQL, reducing retrieval time
-                            by 20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-divider"></div>
-        </section>
-
-        <section id="certifications">
-            <div class="section-content">
-                <h2><i class="fas fa-certificate"></i> Certifications</h2>
-                <div class="certification-grid">
-                    <div class="certification-card scroll-reveal">
-                        <h3>Google Digital Garage | The Fundamentals of Digital Marketing</h3>
-                        <p><i class="fas fa-certificate"></i> Issued by Google | 20/05/2021</p>
-                        <p>Skills: Digital Marketing, Business Analytics</p>
-                        <a href="assets/certificates/certificate.pdf" class="cta-button" id="Certificate_button">View My
-                            Certificate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="section-divider"></div>
-        </section>
-
-        <!-- Certificate Modal -->
-        <div class="certificate-modal" id="certificateModal">
-            <span class="close-modal" id="closeCertificateModal">×</span>
-            <embed src="" type="application/pdf" class="certificate-preview" id="certificatePreview">
-        </div>
-
-        <section id="skills">
-            <div class="section-content">
-                <h2><i class="fas fa-tools"></i> Skills</h2>
-                <div class="skills-list">
-                    <span><i class="fas fa-code"></i> Web Developer</span>
-                    <span><i class="fab fa-js"></i> JavaScript</span>
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span><i class="fas fa-database"></i> MySQL</span>
-                    <span><i class="fab fa-github"></i> GitHub</span>
-                    <span><i class="fab fa-android"></i> Android Studio</span>
-                    <span><i class="fab fa-flutter"></i> Flutter</span>
-                </div>
-            </div>
-            <div class="section-divider"></div>
-        </section>
-
-        <section id="education">
-            <div class="section-content">
-                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                <div class="education-list">
-                    <div class="education-item">
-                        <h3>Master of Computer Applications (MCA)</h3>
-                        <p><i class="fas fa-school"></i> Sacred Heart College (Autonomous), Tirupattur</p>
-                        <p><i class="fas fa-calendar"></i> 2023 - 2025</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>PG Diploma in Data Science</h3>
-                        <p><i class="fas fa-school"></i> Sacred Heart College (Autonomous), Tirupattur</p>
-                        <p><i class="fas fa-calendar"></i> 2024 - 2025</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>Bachelor of Computer Applications (BCA)</h3>
-                        <p><i class="fas fa-school"></i> Sri Vidya Mandir Arts and Science College (Autonomous),
-                            Periyar University, Uthangarai</p>
-                        <p><i class="fas fa-calendar"></i> 2020 - 2023</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-divider"></div>
-        </section>
-
-        <section id="contact">
-            <div class="section-content">
-                <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="cta-button"><i class="fas fa-paper-plane"></i> Send Message</button>
-                </form>
-            </div>
-            <div class="section-divider"></div>
-        </section>
-    </main>
-
-    <!-- Contact Details -->
-    <section class="contact-details">
-        <div class="section-content">
-            <h2><i class="fas fa-address-card"></i> Contact Details</h2>
-            <p><i class="fas fa-envelope"></i> Email: aakishore0@gmail.com</p>
-            <p><i class="fas fa-phone"></i> Phone: +91 9965659946</p>
-            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/kishorea0"
-                    target="_blank">linkedin.com/in/kishorea0</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Kishore A. All rights reserved.</p>
-    </footer>
-
-    <!-- Profile Modal -->
-    <div class="profile-modal" id="profileModal">
-        <span class="close-modal" id="closeModal">×</span>
-        <img src="assets/images/Kishore.jpg" alt="Enhanced Profile" class="enhanced-avatar">
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <!-- Resume Modal -->
-    <div class="resume-modal" id="resumeModal">
-        <span class="close-modal" id="closeResumeModal">×</span>
-        <embed src="assets/resume/Kishore_Resume.pdf" type="application/pdf" class="resume-preview">
-    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="js/script.js"></script>
-</body>
-
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
